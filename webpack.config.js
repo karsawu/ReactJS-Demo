@@ -3,10 +3,10 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        bundle: './src/index.js'
+        bundle: './src/main.js'
     },
     output: {
-        filename: 'boudle.js',
+        filename: 'bundle.js',
     },
     module: {
         loaders: [
@@ -40,6 +40,7 @@ module.exports = {
                 screw_ie8: true,
                 warnings: false
             }
-        })
+        }),
+        new ExtractTextPlugin("bundle.css")
     ]
 }
